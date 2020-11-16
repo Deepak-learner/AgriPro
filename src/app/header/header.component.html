@@ -1,0 +1,31 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src = "../../assets/Logo.PNG" style="height:50px;width:100px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li [routerLinkActive]="['active']" class="nav-item">
+          <a class="nav-link" [routerLink]="['/market']">Market</a>
+        </li>
+        <li [routerLinkActive]="['active']" class="nav-item">
+          <a class="nav-link" [routerLink]="['/product']">My Products</a>
+        </li>
+        <li [routerLinkActive]="['active']" class="nav-item">
+          <a class="nav-link" [routerLink]="['/detect']">Detect</a>
+        </li>
+        <li [routerLinkActive]="['active']" class="nav-item">
+          <a class="nav-link" [routerLink]="['/weed']">Weedopedia</a>
+        </li>
+        <li [routerLinkActive]="['active']" class="nav-item">
+          <a class="nav-link" [routerLink]="['/alerts']">Alerts</a>
+        </li>
+        <li [routerLinkActive]="['active']" class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

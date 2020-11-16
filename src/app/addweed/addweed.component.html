@@ -1,0 +1,44 @@
+<div class="card" style="width:25rem">
+  <div class="card-body">
+    <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+      <div class="text-center">
+        <img [src]="imgSrc" width="350px" height="250px" (click)="fileUploader.click()">
+      </div>
+      <div class="form-group">
+        <label hidden>Select file to upload</label>
+        <input hidden type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl"
+          (change)="showPreview($event)">
+        <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <input class="form-control" formControlName="name" placeholder="Name">
+        <div class="text-danger" *ngIf="isSubmitted && formControls.name.errors?.required">This field is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <input class="form-control" formControlName="type" placeholder="Type">
+        <div class="text-danger" *ngIf="isSubmitted && formControls.type.errors?.required">This field is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" formControlName="appearance" placeholder="Appearance"></textarea>
+        <div class="text-danger" *ngIf="isSubmitted && formControls.appearance.errors?.required">This field is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" formControlName="control" placeholder="Control"></textarea>
+        <div class="text-danger" *ngIf="isSubmitted && formControls.control.errors?.required">This field is required.
+        </div>
+      </div>
+
+
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <button type="submit" class="btn btn-success btn-block float-right">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

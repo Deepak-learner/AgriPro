@@ -1,0 +1,33 @@
+<app-header></app-header>
+
+
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="single-service text-center">
+      <i class="fa fa-camera"></i>
+      <h3>Photo Predict</h3>
+      <hr>
+      <p>We classify the uploaded photo</p>
+    </div>
+    <hr>
+    <div style="text-align: center">
+    <button class="button" [routerLink]="['/photo']"  type="button"><span>Select</span></button></div>
+    <hr>
+  </div>
+
+
+
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="single-service text-center">
+      <i class="fas fa-video"></i>
+      <h3>Live Video Feed</h3>
+      <hr>
+      <p>We classify the crops in the live video feed</p>
+
+    </div>
+    <hr>
+    <div style="text-align: center">
+    <button class="button" [routerLink]="['/live']" type="button"><span>Select</span></button></div>
+    <hr>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+
+<main class="team-section text-center my-5">
+  <h2 class="h1-responsive font-weight-bold my-5" *ngIf="predictionList.length > 0">Alerts</h2>
+  <h2 class="h1-responsive font-weight-bold my-5" *ngIf="predictionList.length === 0">No Alerts</h2>
+<mat-tab-group>
+<mat-tab label="All">
+<mat-accordion multi="true" *ngIf="predictionList.length > 0">
+<mat-expansion-panel *ngFor="let prediction of predictionList">
+  <mat-expansion-panel-header>
+      {{prediction.result}} - {{prediction.distance}} KM - - {{ prediction.date }}
+  </mat-expansion-panel-header>
+  <img [src]="prediction.imageUrl">
+</mat-expansion-panel>
+</mat-accordion>
+</mat-tab>
+
+<mat-tab label="1 - 5 KM">
+  <mat-accordion multi="true" *ngIf="predictionList.length > 0">
+    <mat-expansion-panel *ngFor="let prediction of predictionList">
+      <mat-expansion-panel-header *ngIf="prediction.distance >0 && prediction.distance <=5">
+        {{prediction.result}} - {{prediction.distance}} KM - - {{ prediction.date }}
+      </mat-expansion-panel-header>
+      <img [src]="prediction.imageUrl">
+      <mat-action-row>
+
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+  </mat-tab>
+
+  <mat-tab label="5 - 10 KM">
+      <mat-accordion multi="true" *ngIf="predictionList.length > 0">
+        <mat-expansion-panel *ngFor="let prediction of predictionList">
+          <mat-expansion-panel-header *ngIf="prediction.distance >5 && prediction.distance <=10">
+            {{prediction.result}} - {{prediction.distance}} KM - {{ prediction.date }}
+          </mat-expansion-panel-header>
+          <img [src]="prediction.imageUrl">
+          <mat-action-row>
+
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+      </mat-tab>
+
+      <mat-tab label="> 10 KM">
+          <mat-accordion multi="true" *ngIf="predictionList.length > 0">
+            <mat-expansion-panel *ngFor="let prediction of predictionList">
+              <mat-expansion-panel-header *ngIf="prediction.distance >10">
+                {{prediction.result}} - {{prediction.distance}} KM - {{ prediction.date }}
+              </mat-expansion-panel-header>
+              <img [src]="prediction.imageUrl">
+            </mat-expansion-panel>
+          </mat-accordion>
+          </mat-tab>
+</mat-tab-group>
+</main>

@@ -1,0 +1,61 @@
+
+<div>
+  <div class="container-fluid">
+    <div class="container">
+      <h2 class="text-center" id="title">AgriPro</h2>
+       <hr>
+      <div class="row">
+        <div class="col-md-3"></div>
+
+
+<div class="col-md-5">
+<form #userform = "ngForm" (submit) = "signup(userform)">
+  <fieldset>
+    <p class="text-uppercase pull-center"> Become a member and help us help you.</p>
+     <div class="form-group">
+      <input type="text" name="name" id="name" class="form-control input-lg" placeholder="Full Name" ngModel required>
+    </div>
+
+    <div class="form-group">
+      <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" ngModel required>
+    </div>
+    <div class="form-group">
+      <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Enter Password" ngModel required>
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="contact" id="contact" class="form-control input-lg" placeholder="Phone Number" ngModel required>
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="city" id="city" class="form-control input-lg" placeholder="City" ngModel required>
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="state" id="state" class="form-control input-lg" placeholder="State" ngModel required>
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="pincode" id="pincode" class="form-control input-lg" placeholder="pincode" ngModel required>
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="latitude" id="latitude" class="form-control input-lg" placeholder="Latitude"  [(ngModel)]="latitude" required>
+      <input type="text" name="longitude" id="longitude" class="form-control input-lg" placeholder="Longitude" [(ngModel)]="longitude">
+      <button type="button" class="btn  btn-secondary" (click)="getLocation()">Get Coords !</button>
+    </div>
+
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" required>
+        By Clicking register you're agree to our policy & terms
+      </label>
+      </div>
+      <hr/>
+     <div>
+           <input type="submit" class="btn btn-lg btn-primary" value="Register" [disabled]="!userform.valid">     |
+           <button class="btn btn-lg btn-primary" [routerLink]="['/login']">Login</button>
+     </div>
+  </fieldset>
+</form>
+</div>
